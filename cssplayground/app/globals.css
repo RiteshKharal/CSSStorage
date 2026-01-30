@@ -1,47 +1,42 @@
 @import "tailwindcss";
 
-/* Enable dark: variant using data-theme */
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* Design tokens (Tailwind v4 requires --color-*) */
 @theme {
-  --color-bg: hsl(0 0% 100%);
-  --color-text: hsl(222 47% 11%);
-  --color-surface: hsl(210 40% 98%);
-  --color-primary: hsl(221 83% 53%);
-
-  --color-bg-dark: hsl(222 47% 11%);
-  --color-text-dark: hsl(210 40% 98%);
-  --color-surface-dark: hsl(222 40% 15%);
-  --color-primary-dark: hsl(217 91% 60%);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-accent: hsl(var(--accent));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
 }
 
-/* Light theme */
-:root[data-theme="light"] {
-  color-scheme: light;
-  --color-bg: hsl(0 0% 100%);
-  --color-text: hsl(222 47% 11%);
-  --color-surface: hsl(210 40% 98%);
-  --color-primary: hsl(221 83% 53%);
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --accent: 0 0% 91%;
+  --card: 360 100% 100% / 0.4;
+  --card-foreground: 240 10% 3.9%;
+  --border: 240 5.9% 90%;
+  --primary: 195 100% 15.8%;
+  --primary-foreground: 0 0% 98%;
 }
 
-/* Dark theme */
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --color-bg: hsl(222 47% 11%);
-  --color-text: hsl(210 40% 98%);
-  --color-surface: hsl(222 40% 15%);
-  --color-primary: hsl(217 91% 60%);
-}
-
-/* Smooth transitions */
-html {
-  transition:
-    background-color 200ms ease,
-    color 200ms ease;
+.dark {
+  --background: 240 10% 3%;
+  --foreground: 0 0% 98%;
+  --accent: 0 0% 6.7%;
+  --card: 360 100% 100% / 0.01;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --primary: 195 59.6% 82.9%;
+  --primary-foreground: 240 5.9% 10%;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  transition: background-color 0.3s, color 0.3s;
 }

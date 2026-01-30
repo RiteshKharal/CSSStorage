@@ -11,7 +11,7 @@ export function ThemeProviderWrapper({
   return (
     <NextThemesProvider
       {...({
-        attribute: "data-theme",
+        attribute: "class",
         defaultTheme: "system",
         enableSystem: true,
       } as const)}
