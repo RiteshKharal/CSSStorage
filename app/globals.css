@@ -40,3 +40,15 @@ body {
   color: hsl(var(--foreground));
   transition: background-color 0.3s, color 0.3s;
 }
+
+.ComponentHomeView{
+  @apply bg-foreground/10
+}
+
+h1{
+  font-size:1.875rem;
+}
+
+div{
+  font-size:1.1rem;
+}

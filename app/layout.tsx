@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProviderWrapper } from "./providers/ThemeProvider";
 import ThemeToggle from "./components/ThemeToggle";
+import * as font from '../app/font/fonts'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +31,18 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center justify-center min-h-screen bg-background text-foreground`}
       >
        <ThemeProviderWrapper>
-        <ThemeToggle />
+
+        <nav className="absolute top-10 flex flex-row justify-between w-full pl-10 pr-10">
+
+          <div className={`${font.exo2.className} font-bold`}>
+            CSSStorage
+          </div>
+
+          <div>
+          <ThemeToggle />
+          </div>
+        </nav>
+
          {children}
        </ThemeProviderWrapper>
       </body>
