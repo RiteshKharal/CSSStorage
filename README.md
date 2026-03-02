@@ -50,8 +50,6 @@ npm run dev
 
 ---
 
-## 🧩 Usage
-
 * **Copy components directly into your project**
 * **Import and reuse styles as needed**
 * **Extend or customize components**
