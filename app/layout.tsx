@@ -28,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex items-center justify-center min-h-screen bg-background text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-start items-center-safe min-h-screen bg-background text-foreground pt-20`}
       >
        <ThemeProviderWrapper>
 
-        <nav className="absolute top-10 flex flex-row justify-between w-full pl-10 pr-10">
+        <nav className="fixed top-1 left-0 z-50 flex flex-row justify-between w-full pl-10 pr-10 py-4 bg-background/8 backdrop-blur-md">
 
           <div className={`${font.exo2.className} font-bold`}>
             CSSStorage

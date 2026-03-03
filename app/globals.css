@@ -3,36 +3,47 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-accent: hsl(var(--accent));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-border: hsl(var(--border));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-background: hsla(var(--background));
+  --color-foreground: hsla(var(--foreground));
+  --color-accent: hsla(var(--accent));
+  --color-card: hsla(var(--card));
+  --color-card-foreground: hsla(var(--card-foreground));
+  --color-border: hsla(var(--border));
+  --color-primary: hsla(var(--primary));
+  --color-primary-foreground: hsla(var(--primary-foreground));
 }
 
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;
+
   --accent: 0 0% 91%;
   --card: 360 100% 100% / 0.4;
   --card-foreground: 240 10% 3.9%;
-  --border: 240 5.9% 90%;
-  --primary: 195 100% 15.8%;
+
+  /* hsla(240 6 5 ) */
+  --border: 240 5.9% 47%;
+  --primary: 0 0 99%;
   --primary-foreground: 0 0% 98%;
 }
 
 .dark {
   --background: 240 10% 3%;
   --foreground: 0 0% 98%;
+
   --accent: 0 0% 6.7%;
   --card: 360 100% 100% / 0.01;
   --card-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --primary: 195 59.6% 82.9%;
+  /* hsla(240 3.7 40 / 1) */
+  --border: 240 3.7% 20.9%; 
+  --primary: 240 10 0%;
   --primary-foreground: 240 5.9% 10%;
+}
+
+html{
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,7 +53,7 @@ body {
 }
 
 .ComponentHomeView{
-  @apply bg-foreground/10
+  @apply bg-foreground/6 rounded-xl p-25 text-background
 }
 
 h1{
