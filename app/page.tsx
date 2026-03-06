@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import * as ButtonComponents from './ElementSamples/ButtonComponents'
+import { ButtonElements } from "./ElementDetails";
 import { ChevronDown } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import * as font from "./font/fonts"
@@ -10,12 +10,12 @@ export default function Home() {
   const [filterOpen, setFilterOpen] = useState<boolean>(false)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const [CategoryFilter, setCategoryFilter] = useState<string | null>()
-    const ButtonsElements = [
-      {
-        name: 'Animated Border Button',
-        component: <ButtonComponents.ButtonOne Text='Text' />
-      }
-    ]
+    // const ButtonsElements = [
+    //   {
+    //     name: 'Animated Border Button',
+    //     component: <ButtonComponents.ButtonOne Text='Text' />
+    //   }
+    // ]
   
     useEffect(() => {
       function handleClickOutside(event: MouseEvent) {
@@ -138,15 +138,18 @@ export default function Home() {
 
         
         {CategoryFilter === 'Button' &&
-        ButtonsElements.map((Element, index) => {
+        ButtonElements.map((Element, index) => {
+          const El = Element.component
           return(
         
         <div key={index}>
 
         <div className={`ComponentHomeView ${font.inconsolata.className} relative  `}>
-        {Element.component}
+        < El />
 
-        <button className="bg-foreground/90 p-2 rounded-md text-center right-3 bottom-3 absolute cursor-pointer hover:bg-foreground/80">Get code</button>
+        <button className="bg-foreground/90 p-2 rounded-md text-center right-3 bottom-3 absolute cursor-pointer hover:bg-foreground/80" onClick={()=>{
+          window.location.href = `/ViewElement/${Element.id.toString().replace(/\s+/g, '-')}`;
+        }}>Get code</button>
 
         </div>
         <div className={`${font.josefin.className} flex items-center text-center justify-between pl-2 pr-2 pt-3`}>
