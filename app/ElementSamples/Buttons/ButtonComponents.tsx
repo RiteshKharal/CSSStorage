@@ -7,7 +7,7 @@ type ButtonOneProps = {
 
 export function ButtonOne( { Text = 'Text', onclick } : ButtonOneProps ) {
   return (
-    <button className="relative inline-block px-7.5 py-3.75 uppercase font-semibold text-[20px] no-underline group overflow-hidden select-none text-foreground" onClick={onclick} >
+    <button className="relative inline-block px-7.5 py-3.75 uppercase font-semibold text-[20px] no-underline group overflow-hidden select-none text-foreground cursor-pointer" onClick={onclick} >
       <span className="relative z-10" >{Text}</span>
 
       {/* TOP LEFT */}

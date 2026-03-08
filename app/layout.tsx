@@ -32,7 +32,7 @@ export default function RootLayout({
       >
        <ThemeProviderWrapper>
 
-        <nav className="fixed top-1 left-0 z-50 flex flex-row justify-between w-full pl-10 pr-10 py-4 bg-background/8 backdrop-blur-md">
+        <nav className="fixed top-0 left-0 z-50 flex flex-row justify-between w-full pl-10 pr-10 py-4 bg-background/8 backdrop-blur-md">
 
           <div className={`${font.exo2.className} font-bold`}>
             CSSStorage
