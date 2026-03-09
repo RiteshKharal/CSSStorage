@@ -47,3 +47,30 @@ export function ButtonOne( { Text = 'Text', onclick } : ButtonOneProps ) {
   );
 }
 
+type ButtonTwoProps = {
+  Text? : string ,
+  onclick?: ()=> void ,
+}
+
+export function ButtonTwo( { Text = 'Hover Me', onclick } : ButtonTwoProps ) {
+  return (
+    <button className="relative px-6 py-3 bg-transparent border-2 border-foreground text-foreground font-semibold rounded-lg overflow-hidden group cursor-pointer transition-all duration-300 hover:text-background" onClick={onclick}>
+      <span className="relative z-10">{Text}</span>
+      <div className="absolute inset-0 bg-foreground transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+    </button>
+  );
+}
+
+type ButtonThreeProps = {
+  Text? : string ,
+  onclick?: ()=> void ,
+}
+
+export function ButtonThree( { Text = 'Click Me', onclick } : ButtonThreeProps ) {
+  return (
+    <button className="relative px-8 py-4 bg-linear-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl active:scale-95 cursor-pointer" onClick={onclick}>
+      {Text}
+    </button>
+  );
+}
+

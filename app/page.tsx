@@ -10,12 +10,9 @@ export default function Home() {
   const [filterOpen, setFilterOpen] = useState<boolean>(false)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const [CategoryFilter, setCategoryFilter] = useState<string | null>(null)
-    // const ButtonsElements = [
-    //   {
-    //     name: 'Animated Border Button',
-    //     component: <ButtonComponents.ButtonOne Text='Text' />
-    //   }
-    // ]
+    const ElementsShown = Elements.filter((el)=>{
+      return CategoryFilter ? el.category.includes(CategoryFilter.toLowerCase()) : Elements
+    })
   
     useEffect(() => {
       function handleClickOutside(event: MouseEvent) {
@@ -31,7 +28,7 @@ export default function Home() {
       return () => document.removeEventListener("mousedown", handleClickOutside)
       
     }, [])
-    // eslint-disable-next-line react-hooks/purity
+     
 
 
   return (
@@ -85,7 +82,7 @@ export default function Home() {
                 Input
               </li>
 
-              <li className="px-4 py-2 hover:bg-foreground/10 cursor-pointer transition" onClick={()=>{setCategoryFilter('Cards'); setFilterOpen(false)}}>
+              <li className="px-4 py-2 hover:bg-foreground/10 cursor-pointer transition" onClick={()=>{setCategoryFilter('Card'); setFilterOpen(false)}}>
                 Card 
               </li>
               
@@ -97,19 +94,19 @@ export default function Home() {
     </div>
 
       {/* ELEMENT CARDS CONTAINER */}
-      <div className="grid grid-cols-3 w-4xl">
+      <div className="w-7xl flex  justify-center place-items-center">
 
-      <div className="flex flex-col gap-4">
+      <div className=" gap-8 grid grid-cols-3 auto-cols-auto items-center justify-between justify-items-start">
 
         
-        {CategoryFilter === 'Button' &&
-        Elements.map((Element, index) => {
+        {
+        ElementsShown.map((Element, index) => {
           const El = Element.component
           return(
         
-        <div key={index}>
+        <div key={index} className="">
 
-        <div className={`ComponentHomeView ${font.inconsolata.className} relative  `}>
+        <div className={`ComponentHomeView ${font.inconsolata.className} relative `}>
         < El />
 
         <button className="bg-foreground/90 p-2 rounded-md text-center right-3 bottom-3 absolute cursor-pointer hover:bg-foreground/80" onClick={()=>{
@@ -117,37 +114,7 @@ export default function Home() {
         }}>Get code</button>
 
         </div>
-        <div className={`${font.josefin.className} flex items-center text-center justify-between pl-2 pr-2 pt-3`}>
-          <span>
-            {Element.name}
-            </span>
-            <span>
-              
-            </span>
-        
-        </div>
-        
-        </div>
-        )})
-        }
-
-        {CategoryFilter === null &&
-        // eslint-disable-next-line react-hooks/purity
-        Elements.sort(() => Math.random() - 0.5).map((Element, index) => {
-          const El = Element.component
-          return(
-        
-        <div key={index}>
-
-        <div className={`ComponentHomeView ${font.inconsolata.className} relative  `}>
-        < El />
-
-        <button className="bg-foreground/90 p-2 rounded-md text-center right-3 bottom-3 absolute cursor-pointer hover:bg-foreground/80" onClick={()=>{
-          window.location.href = `/ViewElement/${Element.id.toString().replace(/\s+/g, '-')}`;
-        }}>Get code</button>
-
-        </div>
-        <div className={`${font.josefin.className} flex items-center text-center justify-between pl-2 pr-2 pt-3`}>
+        <div className={`${font.josefin.className} flex items-center text-center justify-center pl-2 pr-2 pt-3`}>
           <span>
             {Element.name}
             </span>

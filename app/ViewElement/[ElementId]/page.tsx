@@ -13,6 +13,7 @@ export default function Page() {
   const router = useRouter()
 
   const ElementDetails = Elements[Number(params.ElementId) - 1]
+  const ElementPreview = ElementDetails.component
 
   const [tab,setTab] = useState<string>("react")
 
@@ -46,20 +47,24 @@ export default function Page() {
       {/* PREVIEW */}
       <div className="flex flex-col gap-4 text-center mt-2">
 
-        <div className="w-90 h-70 bg-foreground/5 rounded-xl flex items-center justify-center relative shadow-sm">
+        <div className="max-w-90 h-fit  rounded-xl flex  justify-center relative  flex-col p-4">
 
-          <ButtonOne/>
+          
+          <div>
+            <ElementPreview/>
+          </div>
 
-          <ScanEye
+          <div className={` mt-5 opacity-60 ${font.exo2.className}` } >
+            {/* <ScanEye
           size={18}
-          className="absolute bottom-4 left-4 opacity-50"
-          />
+          className="  opacity-50"
+          /> */}
+          <span className="text-sm">Preview</span>
+          </div>
 
         </div>
 
-        <span className={`text-sm opacity-60 ${font.exo2.className}`}>
-          Preview
-        </span>
+        
 
       </div>
 
