@@ -27,32 +27,32 @@ export const Elements = [
     code : ButtonComponentsCode.code_ID3,
     category : ['button']
   },
-  // {
-  //   name: "Simple Card",
-  //   id : 4,
-  //   component: CardComponents.CardOne,
-  //   code : CardComponentsCode.code_ID4,
-  //   category : ['card']
-  // },
   {
     name: "Feature Card",
     id : 4,
     component: CardComponents.CardOne,
-    code : CardComponentsCode.code_ID4,
+    code : CardComponentsCode.code_ID1,
     category : ['card']
   },
   {
     name: "Simple Input",
     id : 6,
     component: InputComponents.InputOne,
-    code : InputComponentsCode.code_ID6,
+    code : InputComponentsCode.code_ID1,
     category : ['input']
   },
   {
     name: "Labeled Input",
     id : 7,
     component: InputComponents.InputTwo,
-    code : InputComponentsCode.code_ID7,
+    code : InputComponentsCode.code_ID2,
     category : ['input']
   },
+  {
+    name:'Drop Down',
+    id: 8,
+    component: ButtonComponents.ButtonFour,
+    code : ButtonComponentsCode.code_ID4,
+    category : ['button']
+  }
 ]

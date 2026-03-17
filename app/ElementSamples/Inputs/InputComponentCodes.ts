@@ -1,6 +1,6 @@
 // CODE NAMES MUST START WITH 'code_ID' AND THE ID FOR WHICH THE CODE IS FOR SHOULD ALSO BE ADDED AFTER THE '...ID[COMPONENT ID]'
 
-export const code_ID6 =
+export const code_ID1 =
 `
 'use client';
 
@@ -25,7 +25,7 @@ export function InputOne({ placeholder = "Enter text...", value, onChange }: Inp
 }
 `
 
-export const code_ID7 =
+export const code_ID2 =
 `
 'use client';
 

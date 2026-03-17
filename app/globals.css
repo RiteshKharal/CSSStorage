@@ -52,9 +52,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.ComponentHomeView{
-  @apply bg-foreground/6 rounded-xl p-25 text-background
-}
 
 h1{
   font-size:1.875rem;

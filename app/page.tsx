@@ -35,7 +35,6 @@ export default function Home() {
     <div className="min-h-screen mt-10">
       <div className="w-full">
 
-      {/* FILTER SYSTEM */}
           <div
       className={`
         ${font.ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
@@ -106,8 +105,11 @@ export default function Home() {
         
         <div key={index} className="">
 
-        <div className={`ComponentHomeView ${font.inconsolata.className} relative `}>
-        < El />
+        <div className={`bg-foreground/6 rounded-xl p-2 text-background ${font.inconsolata.className} relative w-[20rem] h-80 flex items-center justify-center`}>
+
+        <div >
+          < El /> 
+        </div>
 
         <button className="bg-foreground/90 p-2 rounded-md text-center right-3 bottom-3 absolute cursor-pointer hover:bg-foreground/80" onClick={()=>{
           window.location.href = `/ViewElement/${Element.id.toString().replace(/\s+/g, '-')}`;
