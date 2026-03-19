@@ -3,6 +3,7 @@
 export const code_ID1 =
 `
 'use client';
+import { roboto } from '@/app/font/fonts';
 
 type InputOneProps = {
   placeholder?: string;
@@ -12,7 +13,7 @@ type InputOneProps = {
 
 export function InputOne({ placeholder = "Enter text...", value, onChange }: InputOneProps) {
   return (
-    <div className="relative">
+    <div className={\`\${roboto.className} relative\`}>
       <input
         type="text"
         placeholder={placeholder}
@@ -28,6 +29,7 @@ export function InputOne({ placeholder = "Enter text...", value, onChange }: Inp
 export const code_ID2 =
 `
 'use client';
+import { inter } from '@/app/font/fonts';
 
 type InputTwoProps = {
   placeholder?: string;
@@ -38,7 +40,7 @@ type InputTwoProps = {
 
 export function InputTwo({ placeholder = "Type here...", value, onChange, label = "Label" }: InputTwoProps) {
   return (
-    <div className="relative">
+    <div className={\`\${inter.className} relative\`}>
       <label className="block text-sm font-medium text-foreground/80 mb-2">{label}</label>
       <div className="relative">
         <input

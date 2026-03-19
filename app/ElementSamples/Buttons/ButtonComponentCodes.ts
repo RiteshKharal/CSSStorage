@@ -95,7 +95,7 @@ export const code_ID4 =
 "use client";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import * as font from "@/app/fonts";
+import { ubuntu, nunito } from "@/app/font/fonts";
 
 type CompoenentTypes = {
   title: string;
@@ -124,7 +124,7 @@ export default function Component({ title, options }: CompoenentTypes) {
     <div className="w-full">
       <div
         className={\`
-        \${font.ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
+        \${ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
         overflow-visible z-[99]
       \`}
       >
@@ -132,7 +132,7 @@ export default function Component({ title, options }: CompoenentTypes) {
           <button
             onClick={() => setFilterOpen(!filterOpen)}
             className={\`
-            \${font.nunito.className}
+            \${nunito.className}
             flex items-center gap-2
             px-4 py-2 rounded-lg
             border border-[hsla(240_5.9%_47%/0.4)] dark:border-[hsla(240_3.7%_20.9%/0.4)]

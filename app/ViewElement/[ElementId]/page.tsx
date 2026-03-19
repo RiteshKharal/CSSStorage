@@ -55,12 +55,9 @@ export default function Page() {
               <ElementPreview />
             </div>
 
-            <div className={` mt-5 opacity-60 ${font.exo2.className}`}>
-              {/* <ScanEye
-          size={18}
-          className="  opacity-50"
-          /> */}
-              <span className="text-sm">Preview</span>
+            <div className={` mt-10  ${font.exo2.className} flex flex-col`}>
+              <span className="text-sm opacity-100 font-bold">{ElementDetails.name}</span>
+              <span className="text-sm opacity-60">Preview</span>
             </div>
           </div>
         </div>
