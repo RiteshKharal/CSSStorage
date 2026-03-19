@@ -95,7 +95,19 @@ export const code_ID4 =
 "use client";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import { ubuntu, nunito } from "@/app/font/fonts";
+import { Ubuntu, Nunito } from 'next/font/google';
+
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu',
+});
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '700', '900'],
+  variable: '--font-nunito',
+});
 
 type CompoenentTypes = {
   title: string;

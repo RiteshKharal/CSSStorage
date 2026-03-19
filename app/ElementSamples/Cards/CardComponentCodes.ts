@@ -1,7 +1,13 @@
 export const code_ID1 =
 `
 'use client';
-import { poppins } from '@/app/font/fonts';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '400', '600', '700', '900'],
+  variable: '--font-poppins',
+});
 
 type CardTwoProps = {
   title?: string;

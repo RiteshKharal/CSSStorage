@@ -1,5 +1,19 @@
 'use client';
 
+import { Inter, Lato } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '400', '500', '700', '900'],
+  variable: '--font-inter',
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700', '900'],
+  variable: '--font-lato',
+});
+
 type InputOneProps = {
   placeholder?: string;
   value?: string;
@@ -8,7 +22,7 @@ type InputOneProps = {
 
 export function InputOne({ placeholder = "Enter text...", value, onChange }: InputOneProps) {
   return (
-    <div className="relative">
+    <div className={`${inter.className} relative`}>
       <input
         type="text"
         placeholder={placeholder}
@@ -29,7 +43,7 @@ type InputTwoProps = {
 
 export function InputTwo({ placeholder = "Type here...", value, onChange, label = "Label" }: InputTwoProps) {
   return (
-    <div className="relative">
+    <div className={`${lato.className} relative`}>
       <label className="block text-sm font-medium text-foreground/80 mb-2">{label}</label>
       <div className="relative">
         <input

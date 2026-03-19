@@ -1,5 +1,19 @@
 'use client';
 
+import { Poppins, Merriweather } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '400', '600', '700', '900'],
+  variable: '--font-poppins',
+});
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-merriweather',
+});
+
 // type CardOneProps = {
 //   title?: string;
 //   description?: string;
@@ -24,9 +38,9 @@ type CardOneProps = {
 
 export function CardOne({ title = "Feature Card", description = "Highlight your key features with this elegant card design.", icon = "✨" }: CardOneProps) {
   return (
-    <div className="bg-card border border-border rounded-lg p-6 hover:border-foreground/50 transition-all duration-300 group cursor-pointer">
+    <div className={`${poppins.className} bg-card border border-border rounded-lg p-6 hover:border-foreground/50 transition-all duration-300 group cursor-pointer`}>
       <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">{icon}</div>
-      <h3 className="text-lg font-semibold text-card-foreground mb-2">{title}</h3>
+      <h3 className={`${merriweather.className} text-lg font-semibold text-card-foreground mb-2`}>{title}</h3>
       <p className="text-card-foreground/70 text-sm">{description}</p>
     </div>
   );

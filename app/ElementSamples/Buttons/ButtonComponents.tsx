@@ -1,7 +1,19 @@
 'use client';
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import * as font from '@/app/font/fonts'
+import { Ubuntu, Nunito } from 'next/font/google';
+
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-ubuntu',
+});
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '700', '900'],
+  variable: '--font-nunito',
+});
 
 type ButtonOneProps = {
   Text? : string ,
@@ -106,7 +118,7 @@ export function ButtonFour({ title = 'Drop Down', options = ['Option one', 'Opti
     <div className="w-full">
       <div
         className={`
-        ${font.ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
+        ${ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
         overflow-visible z-99
       `}
       >
@@ -114,7 +126,7 @@ export function ButtonFour({ title = 'Drop Down', options = ['Option one', 'Opti
           <button
             onClick={() => setFilterOpen(!filterOpen)}
             className={`
-            ${font.nunito.className}
+            ${nunito.className}
             flex items-center gap-2
             px-4 py-2 rounded-lg
             border border-[hsla(240_5.9%_47%/0.4)] dark:border-[hsla(240_3.7%_20.9%/0.4)]
