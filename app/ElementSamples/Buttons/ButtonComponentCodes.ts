@@ -92,7 +92,9 @@ export function ButtonThree( { Text = 'Click Me', onclick } : ButtonThreeProps )
 
 export const code_ID4 = 
 `
+
 "use client";
+
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Ubuntu, Nunito } from 'next/font/google';
@@ -111,7 +113,10 @@ const nunito = Nunito({
 
 type CompoenentTypes = {
   title: string;
-  options: string[];
+  options: {
+    OptionName: string,
+    OptionCallBack: ()=> void ,
+  }[];
 };
 
 export default function Component({ title, options }: CompoenentTypes) {
@@ -133,11 +138,11 @@ export default function Component({ title, options }: CompoenentTypes) {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-fit h-fit">
       <div
         className={\`
-        \${ubuntu.className} mb-14 flex flex-wrap gap-4 rounded-2xl p-2
-        overflow-visible z-[99]
+        \${ubuntu.className} flex flex-wrap gap-4 rounded-2xl p-2
+        overflow-visible z-10
       \`}
       >
         <div ref={containerRef} className="relative ">
@@ -161,7 +166,7 @@ export default function Component({ title, options }: CompoenentTypes) {
               }
             >
               <span className="text-[hsla(240_10%_3.9%/0.9)] dark:text-[hsla(0_0%_98%/0.9)] font-bold mr-3">
-                DropDown
+                {title}
               </span>
             </span>
             <ChevronDown
@@ -177,11 +182,13 @@ export default function Component({ title, options }: CompoenentTypes) {
                     <li
                       className="px-4 py-2 hover:bg-[hsla(240_10%_3.9%/0.1)] dark:hover:bg-[hsla(0_0%_98%/0.1)] cursor-pointer transition"
                       onClick={() => {
+                        opt.OptionCallBack();
                         setFilterOpen(false);
                       }}
                       key={i}
+                      
                     >
-                      {opt}
+                      {opt.OptionName}
                     </li>
                   );
                 })}
@@ -193,4 +200,5 @@ export default function Component({ title, options }: CompoenentTypes) {
     </div>
   );
 }
+
 `;
