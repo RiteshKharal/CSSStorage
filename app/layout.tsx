@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CSS Playground",
+  title: "CSSStorage",
   description: "A place to share CSS code snippets and experiments.",
 };
 
@@ -27,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/WebIconSuitcase.ico" type="image/x-ico" sizes="32x32"/>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-start items-center-safe min-h-screen bg-background text-foreground pt-20`}
       >
